@@ -1,0 +1,19 @@
+.reveal {
+
+  .tabs-buttons-container {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+  }
+
+  .tabs {
+    > * {
+      display: none;
+    }
+
+    > .active {
+      display: block;
+    }
+  }
+  
+}

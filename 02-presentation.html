@@ -108,6 +108,13 @@
 
     <section>
         <h3>Historique</h3>
+        <div class="slide-container">
+            <img src="/assets/images/christopher-alexander-example.png" alt="Exemple Christopher Alexander">
+        </div>
+    </section>
+
+    <section>
+        <h3>Historique</h3>
         <div class="container">
             <div class="col">
                 <p>
@@ -126,6 +133,196 @@
                 <img src="/assets/images/book-gof.jpg" alt="Design Patterns: Elements of Reusable Object-Oriented Software">
             </div>
         </div>
+    </section>
+
+    <section>
+        <h3>Organisation des design patterns</h3>
+        <div class="container" style="align-items: center;">
+            <div class="col">
+                <img src="/assets/images/gof-design-patterns.jpg" alt="Organisation design patterns">
+            </div>
+            <div class="col" style="flex: 0;">
+                <ul class="design-pattern-category-list">
+                    <li>
+                        <div class="design-pattern-category background-creational">C</div>
+                        <div>Creational</div>
+                    </li>
+                    <li>
+                        <div class="design-pattern-category background-structural">S</div>
+                        <div>Structural</div>
+                    </li>
+                    <li>
+                        <div class="design-pattern-category background-behavioral">B</div>
+                        <div>Behavioral</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3>Organisation des design patterns</h3>
+        <ul class="design-pattern-category-list">
+            <li>
+                <div class="design-pattern-category background-creational">C</div>
+                <div>Creational</div>
+            </li>
+            <li>
+                <p>
+                    Ces patterns sont utilisés pour l'instantiation des classes.
+                    Ils peuvent aider à la construction de classes ou d'objets.
+                </p>
+            </li>
+            <li>
+                <div class="design-pattern-category background-structural">S</div>
+                <div>Structural</div>
+            </li>
+            <li>
+                <p>
+                    Ces patterns traitent de la structure et de la composition des classes.
+                    L'objectif principal est de pouvoir ajouter des fonctionnalités sur une classe sans en changer sa
+                    composition.
+                </p>
+            </li>
+            <li>
+                <div class="design-pattern-category background-behavioral">B</div>
+                <div>Behavioral</div>
+            </li>
+            <li>
+                <p>Ces patterns permettent d'aider à structurer la communication entre plusieurs classes.</p>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Relations entre les design patterns</h3>
+        <div class="slide-container">
+            <img src="/assets/images/relationships.png" alt="Relations">
+        </div>
+    </section>
+
+    <section>
+        <h3>Principes de la POO</h3>
+        <p>
+            <strong>Composition over inheritance</strong> :
+            Préférer utiliser le principe de composition plutôt que l'héritage
+        </p>
+        <p>
+            <strong>Program to an 'interface', not an 'implementation'</strong> :
+            Favoriser l'utilisation d'interfaces plutôt que des classes concrètes.
+        </p>
+    </section>
+
+    <section>
+        <h3>SOLID</h3>
+        <p>
+            <strong>Single-responsibility principle</strong> :
+            Chaque classe ne doit avoir qu'une seule responsabilité.
+        </p>
+        <p>
+            <strong>Open–closed principle</strong> :
+            Le code doit être ouvert à l'extension mais fermé à la modification.
+        </p>
+        <p>
+            <strong>Liskov substitution principle</strong> :
+            Une fonction utilisant la référence d'un type doit pouvoir utiliser les références de ses
+            sous-types sans les connaître (polymorphisme).
+        </p>
+        <p>
+            <strong>Interface segregation principle</strong> :
+            Plusieurs interfaces spécifiques sont meilleures qu'une seule interface générique.
+        </p>
+        <p>
+            <strong>Dependency inversion principle</strong> :
+            Dépendre des abstractions et non des implémentations.
+        </p>
+    </section>
+
+    <section>
+        <h3>Dependency Injection (DI)</h3>
+        <p>
+            L'injection de dépendance est une technique en programmation orientée objet qui permet de
+            <strong>favoriser la composition</strong> et d'éviter l'utilisation de l'héritage (composition over
+            inheritance).
+        </p>
+        <p>
+            Elle consiste à passer une dépendance à une classe via son <strong>constructeur</strong>, une
+            <strong>méthode</strong> ou bien directement via une <strong>propriété</strong>.
+        </p>
+    </section>
+
+    <section>
+        <h3>Dependency Injection (DI)</h3>
+        <img src="/assets/images/puzzle.webp" alt="Puzzle">
+        <p>
+            Dans le puzzle ci-dessus, une pièce est manquante.
+            Je pourrais choisir d'y insérer une pièce de puzzle <strong>rouge, verte, bleue</strong>...
+        </p>
+        <p>
+            Cependant, je serais obligé de <strong>respecter la forme</strong> de la pièce.
+        </p>
+    </section>
+
+    <section>
+        <h3>Dependency Injection (DI)</h3>
+        <p>
+            On pourrait représenter l'exemple précédent avec un code source de ce type :
+        </p>
+<pre><code class="language-php">class Puzzle {
+    private Piece $missingPiece;
+
+    public function __construct(Piece $piece) // L'injection ce fait via le constructeur
+    {
+        $this->missingPiece = $piece;
+    }
+}</code></pre>
+        <p>
+            <code class="language-php">Piece</code> pourrait être une classe ou bien une interface.
+            Elle obligera les développeurs à passer en paramètre du constructeur un objet qui respectera une
+            <strong>forme</strong> bien précise (avec des méthodes, des attributs...).
+        </p>
+    </section>
+
+    <section>
+        <h3>Dependency Injection Container (DIC)</h3>
+        <p>
+            Les frameworks modernes utilisent des conteneurs de dépendances qui permettent de faciliter la
+            construction d'objets et qui peuvent être utilisés comme des <strong>services</strong>.
+        </p>
+        <p>
+            Il sera ensuite possible via un système <strong>d'auto-wiring</strong> basé sur la <strong>reflection</strong>
+            d'injecter dynamiquement des services dans des classes.
+        </p>
+        <p>
+            Cela permet de mettre en place le principe d'<strong>Inversion of Control</strong> (IoC).
+            Ce dernier permet à un framework de contrôler l'exécution d'un programme, le développeur ne faisant
+            qu'injecter des comportements à certains moments de l'exécution du programme.
+        </p>
+        <blockquote>
+            <p>Don't call us, we'll call you</p>
+            <cite>Hollywood Principle</cite>
+        </blockquote>
+    </section>
+
+    <section>
+        <h3>Dependency Injection Container (DIC)</h3>
+        <p>
+            Par exemple, dans le framework Symfony, le code suivant permet de récupérer le repository des produits
+            dans une méthode d'un controller :
+        </p>
+        <pre><code class="language-php">namespace App\Controller;
+
+use App\Repository\ProductRepository;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
+class ProductController extends AbstractController
+{
+    // L'auto-wiring permettra d'injecter automatiquement le service ProductRepository
+    public function show(ProductRepository $productRepository)
+    {
+        $products = $productRepository->findAll();
+    }
+}</code></pre>
     </section>
 
 </section>

@@ -1,4 +1,5 @@
 const path = require('path');
+const ZipFilesPlugin = require('webpack-zip-files-plugin');
 
 module.exports = {
     entry: {
@@ -37,5 +38,14 @@ module.exports = {
                 }]
             }
         ]
-    }
+    },
+    plugins: [
+        new ZipFilesPlugin({
+            entries: [
+                { src: path.join(__dirname, './src/code_examples/builder'), dist: 'builder' },
+            ],
+            output: path.join(__dirname, './assets/files/code_examples'),
+            format: 'zip',
+        }),
+    ]
 };

@@ -1,0 +1,103 @@
+<section id="builder" data-background="#9ec9eb">
+
+  <section>
+    <h2>Builder</h2>
+  </section>
+
+  <section>
+    <h3>Présentation</h3>
+    <p>
+      Le pattern <strong>Builder</strong> vous permet de construire des objets complexes étape par étape.
+    </p>
+    <img src="/assets/images/builder.png" alt="Builder">
+    <footer>
+      <a href="https://refactoring.guru/design-patterns/builder" target="_blank" class="info">refactoring.guru</a>
+    </footer>
+  </section>
+
+  <section>
+      <h3>Exemple théorique</h3>
+      <p>
+          Dans cet exemple, nous allons utiliser le design pattern Builder pour permettre de générer des Smiley en
+          ASCII. Nous souhaitons pouvoir créer plusieurs type de Smiley (content, triste...) et que les Smiley
+          puisse être plus ou moins complet (avec ou sans nez).
+      </p>
+      <img src="/assets/images/builder-smiley.png" alt="Builder Pattern">
+      <footer>
+          <a href="/assets/files/code_examples.zip" class="info">Télécharger le code source des exemples</a>
+      </footer>
+  </section>
+
+  <section>
+      <h3>Exemple théorique</h3>
+      <p>
+          Dans cet exemple, il était également possible d'utiliser une classe abstraite plutôt qu'une interface pour
+          éviter de répéter les méthodes <code class="language-php">addToFace()</code>,
+          <code class="language-php">reset()</code> et <code class="language-php">getResult()</code>.
+      </p>
+      <img src="/assets/images/builder-smiley-with-abstract-class.png" alt="Builder Pattern avec classe abstraite">
+  </section>
+
+  <section>
+    <h3>Builder dans l'ORM Doctrine</h3>
+    <p>
+      L'ORM Doctrine utilise le design pattern Builder pour la construction de requêtes via la classe
+      <code class="language-php">QueryBuilder</code> :
+    </p>
+<pre><code class="language-php">$qb = $em->createQueryBuilder(); // $em instanceof EntityManager
+
+$qb->select('u')
+    ->from('User', 'u')
+    ->where('u.id = :identifier')
+    ->orderBy('u.name', 'ASC')
+    ->setParameter('identifier', 100);
+
+$query = $qb->getQuery();</code></pre>
+  </section>
+
+  <section>
+    <h3>Builder dans le framework Symfony</h3>
+    <p>
+      Le framework Symfony et son composant Form utilisent le design pattern Builder pour la construction de
+      formulaires via la classe <code class="language-php">FormBuilder</code> :
+    </p>
+<pre><code class="language-php">public function buildForm(FormBuilderInterface $builder, array $options): void
+{
+    $builder
+        ->add('task', TextType::class)
+        ->add('dueDate', DateType::class)
+        ->add('save', SubmitType::class)
+    ;
+}
+</code></pre>
+  </section>
+
+  <section>
+    <h3>Builder dans le framework Symfony</h3>
+    <figure>
+      <img src="/assets/images/symfony-form-builder.png" alt="Symfony FormBuilder UML">
+      <figcaption>Diagramme de classe UML du FormBuilder de Symfony</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h3>Exercice</h3>
+    <p>
+      Écrire le code source d'une librairie permettant de construire une balise HTML input en choisissant son type
+      (text, checkbox, color...).
+      Il devra être possible de choisir de construire la balise avec des attributs optionnels :
+    </p>
+    <ul>
+      <li><code class="language-html">required</code></li>
+      <li><code class="language-html">value</code></li>
+      <li><code class="language-html">placeholder</code></li>
+    </ul>
+    <div class="instructions">
+      <ol>
+        <li>Créer le diagramme de classe UML</li>
+        <li>Écrire le code source correspondant</li>
+      </ol>
+    </div>
+  </section>
+
+</section>

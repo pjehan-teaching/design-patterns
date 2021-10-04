@@ -43,6 +43,7 @@ module.exports = {
         new ZipFilesPlugin({
             entries: [
                 { src: path.join(__dirname, './src/code_examples/builder'), dist: 'builder' },
+                { src: path.join(__dirname, './src/code_examples/factory_method'), dist: 'factory_method' },
             ],
             output: path.join(__dirname, './assets/files/code_examples'),
             format: 'zip',

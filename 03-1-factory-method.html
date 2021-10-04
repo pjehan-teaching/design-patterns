@@ -1,0 +1,67 @@
+<section id="factory-method" data-background="#9ec9eb">
+
+  <section>
+    <h2>Factory Method</h2>
+  </section>
+
+  <section>
+    <h3>Présentation</h3>
+    <p>
+      Le pattern Factory Method permet à des classes enfants de modifier le type d'objet qui va être créé par une
+      classe parent.
+    </p>
+    <img src="/assets/images/factory-method.png" alt="Factory Method">
+    <footer>
+      <a href="https://refactoring.guru/design-patterns/factory-method" target="_blank" class="info">refactoring.guru</a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>Exemple théorique</h3>
+    <p>
+      Dans cet exemple, nous allons utiliser le design pattern Factory Method pour permettre de créer des personnages
+      (chevalier, magicien...).
+    </p>
+    <img src="/assets/images/factory-method-character.png" alt="Factory Method Character">
+    <footer>
+      <a href="/assets/files/code_examples.zip" class="info">Télécharger le code source des exemples</a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>Factory Method dans l'ORM Doctrine</h3>
+    <p>
+      La classe <code class="language-php">EntityManager</code> de Doctrine utilise le design pattern factory method :
+    </p>
+<pre><code class="language-php">public static function create($connection, Configuration $config, ?EventManager $eventManager = null)
+{
+    if (! $config->getMetadataDriverImpl()) {
+        throw ORMException::missingMappingDriverImpl();
+    }
+
+    $connection = static::createConnection($connection, $config, $eventManager);
+
+    return new EntityManager($connection, $config, $connection->getEventManager());
+}</code></pre>
+  </section>
+
+  <section>
+    <h3>Exercice</h3>
+    <p>
+      Écrire le code source d'une librairie permettant de construire des carrés sur une page HTML.
+      Cette librairie permettra de choisir d'afficher le carré en CSS ou bien en SVG.
+    </p>
+    <p>
+      Exemple d'utilisation :
+    </p>
+<pre><code class="language-php">$squareCreator = new SquareCreator(new SvgSquareCreator());
+$squareCreator->draw(10, 'blue'); // 10px x 10px blue SVG square</code></pre>
+    <div class="instructions">
+      <ol>
+        <li>Créer le diagramme de classe UML</li>
+        <li>Écrire le code source correspondant</li>
+      </ol>
+    </div>
+  </section>
+
+</section>

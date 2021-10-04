@@ -1,0 +1,51 @@
+<section id="singleton" data-background="#9ec9eb">
+
+  <section>
+    <h2>Singleton ☠</h2>
+  </section>
+
+  <section>
+    <h3>Présentation</h3>
+    <p>
+      Le pattern <strong>Singleton</strong> vous permet de construire une classe et de vous assurer que celle-ci n'aura
+      qu'une et une seule instance.
+    </p>
+    <p>
+      Cela permet d'avoir un accès global à un objet tout en s'assurant de toujours récupérer le même objet.
+    </p>
+    <img src="/assets/images/singleton.png" alt="Singleton">
+    <footer>
+      <a href="https://refactoring.guru/design-patterns/singleton" target="_blank" class="info">refactoring.guru</a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>Exemple théorique</h3>
+    <p>
+      Un exemple classique du Singleton est celui de la connexion à la base de données.
+      Dans une application, on souhaite généralement ouvrir une seule connexion à la base de données et donc gérer
+      cela avec une classe ayant une seule instance :
+    </p>
+    <img src="/assets/images/singleton-db-connection.png" alt="Singleton Connexion">
+    <footer>
+        <a href="/assets/files/code_examples.zip" class="info">Télécharger le code source des exemples</a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>Anti pattern</h3>
+    <p>
+      Malheureusement, ce pattern très simple à comprendre est également considéré aujourd'hui comme un
+      <strong>anti-pattern</strong> pour plusieurs raisons :
+    </p>
+    <ul>
+      <li>Open/Close principle : L'utilisation de méthodes statiques ne permet pas de surcharger les méthodes.</li>
+      <li>Single Responsibility : Singleton fait 2 choses en même temps (une seule instance et accès global).</li>
+      <li>Difficile à tester via des librairies de tests unitaires.</li>
+    </ul>
+    <footer>
+      <a href="https://stackoverflow.com/questions/137975/what-are-drawbacks-or-disadvantages-of-singleton-pattern" target="_blank" class="danger">N'utilisez pas Singleton !</a>
+    </footer>
+  </section>
+
+</section>

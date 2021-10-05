@@ -1,0 +1,69 @@
+<section id="decorator" data-background="#fecc99">
+
+  <section>
+    <h2>Decorator</h2>
+  </section>
+
+  <section>
+    <h3>Présentation</h3>
+    <p>
+      Le pattern Decorator permet d'ajouter des comportements sur une classe en évitant d'utiliser l'héritage.
+      Cela peut être intéressant lorsque l'utilisation de l'<strong>héritage devient trop complexe</strong> (nombre de
+      classes trop important).
+    </p>
+    <img src="/assets/images/decorator.png" alt="Decorator">
+    <footer>
+      <a href="https://refactoring.guru/design-patterns/decorator" target="_blank" class="info">refactoring.guru</a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>Présentation</h3>
+    <img src="/assets/images/decorator-schema.png" alt="Decorator">
+    <img src="/assets/images/decorator-sequence-diagram.png" alt="Diagramme de séquence Decorator">
+  </section>
+
+  <section>
+    <h3>Exemple théorique</h3>
+    <p>
+      Dans cet exemple, nous allons utiliser le design pattern Decorator pour développer les armes pour un jeu vidéo.
+      L'objectif est de pouvoir dynamiquement ajouter dans le code des pouvoirs aux armes pour augmenter leur puissance.
+    </p>
+    <img src="/assets/images/decorator-weapon.png" alt="Decorator Weapon">
+    <footer>
+      <a href="/assets/files/code_examples.zip" class="info">Télécharger le code source des exemples</a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>Decorator dans le framework Symfony</h3>
+    <p>
+      Les services de Symfony utilisent le design pattern Decorator pour ajouter des fonctionnalités à un service :
+    </p>
+    <pre><code class="language-yaml"># config/services.yaml
+services:
+  App\Mailer: ~
+  App\DecoratingMailer:
+    decorates: App\Mailer</code></pre>
+    <footer>
+      <a href="https://symfony.com/doc/current/service_container/service_decoration.html" target="_blank" class="info">
+        Symfony : How to Decorate Services
+      </a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>Exercice</h3>
+    <p>
+      Écrire le code source d'une librairie permettant de construire des voitures.
+      Les voitures pourront avoir plusieurs options (GPS, climatisation...) qui feront augmenter le coût du véhicule.
+    </p>
+    <div class="instructions">
+      <ol>
+        <li>Créer le diagramme de classe UML</li>
+        <li>Écrire le code source correspondant</li>
+      </ol>
+    </div>
+  </section>
+
+</section>

@@ -1,0 +1,102 @@
+<section id="composite" data-background="#fecc99">
+
+  <section>
+    <h2>Composite</h2>
+  </section>
+
+  <section>
+    <h3>Présentation</h3>
+    <p>
+      Le pattern Composite permet de simplifier la gestion des données en arbre.
+    </p>
+    <img src="/assets/images/composite.png" alt="Composite">
+    <footer>
+      <a href="https://refactoring.guru/design-patterns/composite" target="_blank" class="info">refactoring.guru</a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>Exemple théorique</h3>
+    <p>
+      Dans cet exemple, nous allons utiliser le design pattern Composite pour développer un programme permettant de
+      générer un diagramme de Gantt.
+    </p>
+    <img src="/assets/images/composite-gantt.png" alt="Composite Gantt">
+    <footer>
+      <a href="/assets/files/code_examples.zip" class="info">Télécharger le code source des exemples</a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>Composite dans le framework Symfony</h3>
+    <p>
+      Le framework Symfony utilise le design pattern composite dans son composant de gestion des formulaires :
+    </p>
+    <pre><code class="language-php">namespace Symfony\Component\Form;
+
+class Form implements FormInterface
+{
+  private FormInterface $parent;
+  private FormInterface $children;
+
+  public function add(FormInterface $child)
+  {
+    $this->children[$child->getName()] = $child;
+    $child->setParent($this);
+
+    return $this;
+  }
+}</code></pre>
+    <footer>
+      <a href="https://github.com/symfony/form/blob/5.3/Form.php" target="_blank" class="info">
+        Code complet de la classe Form
+      </a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>Decorator dans l'ORM Doctrine</h3>
+    <p>
+      L'ORM Doctrine permet d'utiliser le design pattern Decorator au sein des entités liées à la base de données :
+    </p>
+    <pre><code class="language-php">// create a new concrete component
+$c = new ConcreteComponent();
+$c->setName('Test Component 1');
+$em->persist($c); // assigned unique ID = 1
+
+// create a new concrete decorator
+$c = new ConcreteComponent();
+$c->setName('Test Component 2');
+
+$d = new ConcreteDecorator($c);
+$d->setSpecial('Really');
+$em->persist($d);
+// assigns c as unique ID = 2, and d as unique ID = 3
+
+$em->flush();
+
+echo $d->getName();
+// prints: [Really] Decorated Test Component 2</code></pre>
+    <footer>
+      <a href="https://www.doctrine-project.org/projects/doctrine-orm/en/2.9/cookbook/decorator-pattern.html" target="_blank" class="info">
+        Doctrine : Persisting the Decorator Pattern
+      </a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>Exercice</h3>
+    <p>
+      Écrire le code source d'une librairie permettant de gérer des dossiers et des fichiers.
+      Un dossier pouvant contenir plusieurs sous-dossiers / fichiers, il devra être possible ensuite de calculer la
+      taille totale d'un dossier.
+    </p>
+    <div class="instructions">
+      <ol>
+        <li>Créer le diagramme de classe UML</li>
+        <li>Écrire le code source correspondant</li>
+      </ol>
+    </div>
+  </section>
+
+</section>

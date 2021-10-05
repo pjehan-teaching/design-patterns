@@ -1,0 +1,53 @@
+<section id="template-method" data-background="#cee396">
+
+  <section>
+    <h2>Template Method</h2>
+  </section>
+
+  <section>
+    <h3>Présentation</h3>
+    <p>
+      Le pattern Template Method permet à des classes enfants de <strong>modifier certaines étapes</strong> d'un
+      algorithme définit dans une classe parent.
+    </p>
+    <img src="/assets/images/template-method.png" alt="Template Method">
+    <footer>
+      <a href="https://refactoring.guru/design-patterns/template-method" target="_blank" class="info">refactoring.guru</a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>Exemple théorique</h3>
+    <p>
+      Dans cet exemple, nous allons utiliser le design pattern Template Method pour gérer un upload de fichier.
+      Pour chaque upload, plusieurs traitements doivent être effectués (déplacer le fichier, le renommer...) mais ces
+      traitements peuvent changer en fonction du type de fichier uploadé (image, vidéo...).
+    </p>
+    <img src="/assets/images/template-method-fileupload.png" alt="Template Method File Upload">
+    <footer>
+      <a href="/assets/files/code_examples.zip" class="info">Télécharger le code source des exemples</a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>Exercice</h3>
+    <p>
+      Écrire le code source d'une librairie permettant d'afficher une page web (uniquement page d'accueil et page 404
+      pour le moment).
+      Les étapes de création de la page seront les suivantes :
+    </p>
+    <ul>
+      <li>Définition des headers (par exemple le code HTTP)</li>
+      <li>Définition du titre de la page</li>
+      <li>Informations dans la balise <code class="language-html">&lt;head&gt;</code></li>
+      <li>Contenu de la page</li>
+    </ul>
+    <div class="instructions">
+      <ol>
+        <li>Créer le diagramme de classe UML</li>
+        <li>Écrire le code source correspondant</li>
+      </ol>
+    </div>
+  </section>
+
+</section>

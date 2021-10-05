@@ -48,6 +48,7 @@ module.exports = {
                 { src: path.join(__dirname, './src/code_examples/decorator'), dist: 'decorator' },
                 { src: path.join(__dirname, './src/code_examples/composite'), dist: 'composite' },
                 { src: path.join(__dirname, './src/code_examples/strategy'), dist: 'strategy' },
+                { src: path.join(__dirname, './src/code_examples/template_method'), dist: 'template_method' },
             ],
             output: path.join(__dirname, './assets/files/code_examples'),
             format: 'zip',

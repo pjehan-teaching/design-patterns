@@ -55,36 +55,6 @@ class Form implements FormInterface
   </section>
 
   <section>
-    <h3>Decorator dans l'ORM Doctrine</h3>
-    <p>
-      L'ORM Doctrine permet d'utiliser le design pattern Decorator au sein des entités liées à la base de données :
-    </p>
-    <pre><code class="language-php">// create a new concrete component
-$c = new ConcreteComponent();
-$c->setName('Test Component 1');
-$em->persist($c); // assigned unique ID = 1
-
-// create a new concrete decorator
-$c = new ConcreteComponent();
-$c->setName('Test Component 2');
-
-$d = new ConcreteDecorator($c);
-$d->setSpecial('Really');
-$em->persist($d);
-// assigns c as unique ID = 2, and d as unique ID = 3
-
-$em->flush();
-
-echo $d->getName();
-// prints: [Really] Decorated Test Component 2</code></pre>
-    <footer>
-      <a href="https://www.doctrine-project.org/projects/doctrine-orm/en/2.9/cookbook/decorator-pattern.html" target="_blank" class="info">
-        Doctrine : Persisting the Decorator Pattern
-      </a>
-    </footer>
-  </section>
-
-  <section>
     <h3>Exercice</h3>
     <p>
       Écrire le code source d'une librairie permettant de gérer des dossiers et des fichiers.

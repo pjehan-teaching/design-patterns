@@ -12,7 +12,7 @@ class Sprint implements Activity
 
     public function getCost(): float
     {
-        return array_reduce($this->activities, fn(int $total, Activity $activity) => $total + $activity->getCost(), 0);
+        return array_reduce($this->activities, fn(float $total, Activity $activity) => $total + $activity->getCost(), 0);
     }
 
     public function add(Activity $activity): void

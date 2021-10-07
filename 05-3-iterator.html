@@ -1,0 +1,84 @@
+<section id="iterator" data-background="#cee396">
+
+  <section>
+    <h2>Iterator</h2>
+  </section>
+
+  <section>
+    <h3>Présentation</h3>
+    <p>
+      Le pattern Iterator permet de faciliter la gestion d'une collection d'éléments en masquant son organisation
+      (tableau, arbre, liste chaînée...).
+    </p>
+    <img src="/assets/images/iterator.png" alt="Iterator">
+    <footer>
+      <a href="https://refactoring.guru/design-patterns/iterator" target="_blank" class="info">refactoring.guru</a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>L'interface Iterator de PHP</h3>
+    <p>
+      Le design pattern iterator étant très utilisé, le langage PHP dispose nativement d'une interface
+      <code class="language-php">Iterator</code> ainsi que de plusieurs
+      <a href="https://www.php.net/manual/en/spl.iterators.php" target="_blank">classes</a> faisant partie de la
+      <abbr title="Standard PHP Library">SPL</abbr>
+    </p>
+    <img src="/assets/images/iterator-php-interface.png" alt="Interface Iterator en PHP">
+    <footer>
+      <a href="https://www.php.net/manual/en/class.iterator.php" target="_blank" class="info">PHP doc</a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>Exemple théorique</h3>
+    <p>
+      Dans cet exemple, nous allons utiliser le design pattern Iterator pour
+      <strong>parcourir une liste de notifications</strong>.
+    </p>
+    <img src="/assets/images/iterator-notifications.png" alt="Iterator Notifications">
+    <footer>
+      <a href="/assets/files/code_examples.zip" class="info">Télécharger le code source des exemples</a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>Iterator dans Doctrine</h3>
+    <p>
+      Doctrine dispose d'une classe <code class="language-php">ArrayCollection</code> permettant de faciliter la
+      gestion des tableaux et plus particulièrement des données retournées par une base de données.
+    </p>
+    <p>
+      Cette classe dispose de nombreuses méthodes permettant d'effectuer des traitements sur une collection
+      d'éléments :
+    </p>
+    <ul>
+      <li><code class="language-php">add()</code></li>
+      <li><code class="language-php">clear()</code></li>
+      <li><code class="language-php">first()</code></li>
+      <li><code class="language-php">isEmpty()</code></li>
+      <li>...</li>
+    </ul>
+    <footer>
+      <a href="https://www.doctrine-project.org/projects/doctrine-collections/en/1.6/index.html" target="_blank" class="info">
+        Doctrine Collections
+      </a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>Exercice</h3>
+    <p>
+      Écrire le code source d'un iterator permettant de parcourir le contenu d'un dossier du disque dur. On doit
+      pouvoir passer à la classe le chemin d'un répertoire et ensuite pouvoir utiliser la boucle
+      <code class="language-php">foreach</code> pour afficher le contenu.
+    </p>
+    <div class="instructions">
+      <ol>
+        <li>Créer le diagramme de classe UML</li>
+        <li>Écrire le code source correspondant</li>
+      </ol>
+    </div>
+  </section>
+
+</section>

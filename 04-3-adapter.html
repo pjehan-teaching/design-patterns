@@ -1,0 +1,104 @@
+<section id="adapter" data-background="#fecc99">
+
+  <section>
+    <h2>Adapter</h2>
+  </section>
+
+  <section>
+    <h3>Présentation</h3>
+    <p>
+      Le pattern Adapter permet de faire communiquer deux interfaces incompatibles.
+    </p>
+    <img src="/assets/images/adapter.png" alt="Adapter">
+    <footer>
+      <a href="https://refactoring.guru/design-patterns/adapter" target="_blank" class="info">refactoring.guru</a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>Exemple théorique</h3>
+    <p>
+      Dans cet exemple, nous allons imaginer vouloir utiliser une librairie codée en français dans un projet codé en
+      anglais.
+    </p>
+    <p>
+      Nous avons déjà créé une classe <code>Person</code> avec des propriétés <code>firstName</code> et <code>lastName</code>
+      ainsi qu'une fonction <code>sayHello()</code> qui retourne un message de salutation.
+    </p>
+    <img src="/assets/images/adapter-person-problem.png" alt="Adapter Person Problem">
+  </section>
+
+  <section>
+    <h3>Exemple théorique</h3>
+    <p>
+      Pour résoudre ce problème, nous allons créer une classe <code>PersonAdapter</code> qui va adapter les méthodes
+      de la classe <code>Personne</code> pour les rendre compatibles avec notre projet.
+    </p>
+    <img src="/assets/images/adapter-person-solution.png" alt="Adapter Person Solution">
+    <footer>
+      <a href="/assets/files/code_examples.zip" class="info">Télécharger le code source des exemples</a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>Adapter dans le framework Symfony</h3>
+    <p>
+      Le framework Symfony utilise le design pattern adapter dans sa gestion du cache.
+    </p>
+    <p>
+      En effet, Symfony propose plusieurs adaptateurs pour gérer le cache de votre application. Vous pouvez utiliser
+      Redis, Memcached, APCu, etc. pour stocker les données en cache.
+    </p>
+    <pre><code class="language-php">class RedisAdapter extends AbstractAdapter
+{
+    use RedisTrait; // Contient une méthode createConnection() présente également dans AbstractAdapter
+
+    public function __construct(\Redis|\RedisArray|\RedisCluster|\Predis\ClientInterface|\Relay\Relay $redis, string $namespace = '', int $defaultLifetime = 0, ?MarshallerInterface $marshaller = null)
+    {
+        $this->init($redis, $namespace, $defaultLifetime, $marshaller);
+    }
+}</code></pre>
+    <footer>
+      <a href="https://github.com/symfony/symfony/blob/7.2/src/Symfony/Component/Cache/Adapter/RedisAdapter.php" target="_blank" class="info">
+        Code complet de la classe RedisAdapter
+      </a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>Exercice</h3>
+    <p>
+      Vous avez créé une classe <code>Slugger</code> qui permet de générer un slug à partir d'une chaîne de caractères.
+    </p>
+    <p>
+      Vous avez également créé une fonction createFileName() qui prend en paramètre un nom de fichier et une instance
+      de la classe <code>Slugger</code> et qui retourne un nom de fichier avec un slug.
+    </p>
+    <pre><code class="language-php">class Slugger
+{
+    public function generateSlug(string $string): string
+    {
+        return preg_replace('/[^a-z0-9]+/', '-', strtolower(trim(strip_tags($string)));
+    }
+}</code></pre>
+    <pre><code class="language-php">function createFileName(string $fileName, Slugger $slugger): string
+{
+    return $slugger->generateSlug($fileName);
+}</code></pre>
+  </section>
+
+  <section>
+    <h3>Exercice</h3>
+    <p>
+      Vous souhaitez maintenant pouvoir utiliser la classe <code>AsciiSlugger</code> du package
+      <a href="https://symfony.com/doc/current/string.html">symfony/string</a> pour générer des slugs.
+    </p>
+    <div class="instructions">
+      <ol>
+        <li>Installer le package <code>symfony/string</code> avec Composer</li>
+        <li>Créer une classe <code>AsciiSluggerAdapter</code> qui va adapter les méthodes de la classe <code>AsciiSlugger</code></li>
+      </ol>
+    </div>
+  </section>
+
+</section>

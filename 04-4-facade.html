@@ -1,0 +1,78 @@
+<section id="facade" data-background="#fecc99">
+
+  <section>
+    <h2>Facade</h2>
+  </section>
+
+  <section>
+    <h3>Présentation</h3>
+    <p>
+      Le pattern Facade permet de simplifier l'utilisation d'un système complexe en fournissant une interface unifiée.
+    </p>
+    <img src="/assets/images/facade.png" alt="Facade">
+    <footer>
+      <a href="https://refactoring.guru/design-patterns/facade" target="_blank" class="info">refactoring.guru</a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>Exemple théorique</h3>
+    <p>
+      Dans cet exemple, nous allons imaginer gérer un système complexe dans lequel plusieurs fichiers de configuration
+      existent. Nous souhaitons alors simplifier l'agrégation de l'ensemble des configurations via une classe :
+    </p>
+    <img src="/assets/images/facade-config-problem.png" alt="Facade Config Problem">
+  </section>
+
+  <section>
+    <h3>Adapter dans le framework Laravel</h3>
+    <p>
+      Laravel utilise massivement le design pattern facade pour simplifier l'utilisation de ses composants.
+    </p>
+    <p>
+        Par exemple, pour envoyer un mail, vous pouvez utiliser la facade <code>Mail</code> :
+    </p>
+    <pre><code class="language-php">Mail::to('contact@test.com')->send(new ContactMail($data));</code></pre>
+    <p>
+      En fait, les facades Laravel permettent d'accéder à des classes du framework via une interface statique.
+      Il s'agit d'une surcouche au conteneur de services (service container) de Laravel (Symfony utilise également un
+      conteneur de services, mais ne propose pas de facades).
+    </p>
+    <footer>
+      <a href="https://laravel.com/docs/11.x/mail#sending-mail" target="_blank" class="info">
+        Envoi de mail Laravel
+      </a>
+      <a href="https://laravel.com/docs/11.x/facades" target="_blank" class="info">
+        Facades Laravel
+      </a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>Exercice</h3>
+    <p>
+      Réalisez un exemple de Facade en PHP en créant une classe <code class="language-php">EmailFacade</code> qui permet
+      d'envoyer un email en utilisant 3 autres classes :
+    </p>
+    <ol>
+      <li>
+        <code class="language-php">EmailValidator</code> : Permet de valider une adresse email (utilisez la fonction PHP
+        <code class="language-php">filter_var</code>).
+      </li>
+      <li>
+        <code class="language-php">EmailFormatter</code> : Permet de formater le contenu de l'email (ajout de balises
+        HTML, etc.). Utilisez la fonction PHP <code class="language-php">nl2br</code> pour ajouter des sauts de ligne.
+      </li>
+      <li>
+        <code class="language-php">EmailSender</code> : Permet d'envoyer l'email (utilisez la fonction PHP
+        <code class="language-php">mail</code>).
+      </li>
+    </ol>
+    <p>
+      À la fin de l'exercice, vous devriez pouvoir envoyer un email en utilisant la classe <code class="language-php">EmailFacade</code> :
+    </p>
+    <pre><code class="language-php">$emailFacade = new EmailFacade();
+$emailFacade->send('contact@test.com', 'Sujet', 'Contenu');</code></pre>
+  </section>
+
+</section>

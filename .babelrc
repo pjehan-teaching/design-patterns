@@ -2,7 +2,7 @@
   "plugins": [
     ["prismjs", {
       "languages": ["php", "java", "yaml", "html"],
-      "plugins": ["line-numbers"],
+      "plugins": ["line-numbers", "line-highlight"],
       "theme": "tomorrow",
       "css": true
     }]

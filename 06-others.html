@@ -1,0 +1,140 @@
+<section id="others">
+
+  <section>
+    <h2>Autres patterns</h2>
+  </section>
+
+  <section>
+    <h3>Method chaining</h3>
+    <p>
+      Le method chaining est un pattern qui permet d'<strong>appeler plusieurs méthodes sur un même objet de manière
+      fluide</strong> en les enchaînant.
+      <strong>Chaque méthode retourne l'objet lui-même</strong>, ce qui permet d'appeler la méthode suivante directement.
+    </p>
+    <p>
+      Cette méthode est également connue sous le nom de "<strong>fluent interface</strong>".
+    </p>
+    <p>
+      Exemple :
+    </p>
+    <pre style="max-height: 40vh;" data-line="7,12,16-18" class="line-numbers"><code class="language-php">class Person {
+  private $name;
+  private $age;
+
+  public function setName($name) {
+    $this->name = $name;
+    return $this;
+  }
+
+  public function setAge($age) {
+    $this->age = $age;
+    return $this;
+  }
+}
+
+$person = new Person()
+  ->setName("John")
+  ->setAge(30);
+</code></pre>
+    <footer>
+      <a href="https://en.wikipedia.org/wiki/Method_chaining" target="_blank" class="info">
+        Method chaining - Wikipedia
+      </a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>Front Controller</h3>
+    <p>
+      Le pattern Front Controller est un pattern architectural qui <strong>centralise la gestion des requêtes entrantes
+      </strong> dans une application web.
+      Il utilise un <strong>contrôleur unique</strong> pour traiter toutes les requêtes, ce qui permet de gérer la
+      logique de routage, l'authentification, la gestion des erreurs et d'autres préoccupations transversales.
+    </p>
+    <p>
+      Ce pattern est souvent utilisé dans les <strong>frameworks MVC</strong> (Model-View-Controller) pour séparer les
+      responsabilités et améliorer la maintenabilité du code.
+    </p>
+    <footer>
+      <a href="https://en.wikipedia.org/wiki/Front_controller" target="_blank" class="info">
+        Front Controller - Wikipedia
+      </a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>Unit of Work</h3>
+    <p>
+      Le pattern Unit of Work est un pattern de conception qui
+      <strong>gère les transactions et les modifications d'objets</strong> dans une application.
+      Il suit les changements apportés aux objets et coordonne l'écriture de ces changements dans la base de données
+      de manière efficace.
+    </p>
+    <p>
+      Ce pattern est souvent utilisé dans les systèmes de gestion de bases de données et les ORM (Object-Relational
+      Mapping) pour minimiser le nombre d'opérations de base de données et garantir la cohérence des données.
+    </p>
+    <footer>
+      <a href="https://en.wikipedia.org/wiki/Unit_of_work" target="_blank" class="info">
+        Unit of Work - Wikipedia
+      </a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>Repository</h3>
+    <p>
+      Le pattern Repository est un pattern de conception qui
+      <strong>abstrait l'accès aux données</strong> dans une application.
+      Il fournit une interface pour interagir avec la source de données (base de données, API, etc.) sans exposer les détails
+      de l'implémentation.
+    </p>
+    <p>
+      Ce pattern est souvent utilisé pour <strong>faciliter les tests unitaires</strong> en permettant de remplacer facilement
+      la source de données par une implémentation fictive (mock) lors des tests.
+    </p>
+    <footer>
+      <a href="https://en.wikipedia.org/wiki/Repository" target="_blank" class="info">
+          Repository - Wikipedia
+      </a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>Mock</h3>
+    <p>
+      Le pattern Mock est un pattern de conception utilisé principalement dans les tests unitaires pour
+      <strong>simuler le comportement d'objets réels</strong>.
+      Il permet de créer des objets factices qui imitent le comportement des objets réels, ce qui facilite le test
+      des composants isolés sans dépendre de leurs dépendances externes.
+    </p>
+    <p>
+      Ce pattern est souvent utilisé pour <strong>vérifier les interactions entre les objets</strong> et s'assurer que les
+      méthodes sont appelées avec les bons paramètres.
+    </p>
+    <footer>
+      <a href="https://en.wikipedia.org/wiki/Mock_object" target="_blank" class="info">
+        Mock - Wikipedia
+      </a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>Data transfer object</h3>
+    <p>
+      Le pattern Data Transfer Object (DTO) est un pattern de conception qui
+      <strong>transfère des données entre différentes couches d'une application</strong>.
+      Il encapsule les données dans un objet simple sans logique métier, ce qui facilite le transfert des données.
+    </p>
+    <p>
+      Ce pattern peut par exemple être utilisé pour transférer des données entre la couche de présentation et la
+      couche modèle d'une application.
+    </p>
+    <footer>
+      <a href="https://en.wikipedia.org/wiki/Data_transfer_object" target="_blank" class="info">
+        Data Transfer Object - Wikipedia
+      </a>
+    </footer>
+  </section>
+
+</section>

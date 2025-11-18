@@ -1,0 +1,68 @@
+<section id="observer" data-background="#cee396">
+
+  <section>
+    <h2>Observer</h2>
+  </section>
+
+  <section>
+    <h3>Présentation</h3>
+    <p>
+      Le pattern Observer permet de définir une relation de dépendance un-à-plusieurs entre des objets, de sorte que
+      lorsque l'objet sujet change d'état, tous ses observateurs sont automatiquement notifiés et mis à jour.
+    </p>
+    <a href="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=observer&dark=auto#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1iEe53aKx0yCrxYxXzco7LX7NcPgdTXZZ%26export%3Ddownload" target="_blank">
+      <img src="/assets/images/observer.png" alt="Observer">
+    </a>
+    <footer>
+      <a href="https://refactoring.guru/design-patterns/iterator" target="_blank" class="info">refactoring.guru</a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>Interfaces pour Observer de PHP</h3>
+    <p>
+      Le design pattern Observer étant très utilisé, le langage PHP dispose nativement de deux interfaces
+      <code class="language-php">SplObserver</code> et <code class="language-php">SplSubject</code> faisant partie de la
+      <abbr title="Standard PHP Library">SPL</abbr>
+    </p>
+    <img src="/assets/images/observer-php-interfaces.png" alt="Interfaces Observer en PHP">
+    <footer>
+      <a href="https://www.php.net/manual/en/class.splobserver.php" target="_blank" class="info">PHP doc</a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>Observer dans Symfony</h3>
+    <p>
+      Le pattern Observer est largement utilisé dans le framework Symfony, notamment à travers le
+      <strong>système d'événements</strong>.
+      Les événements permettent aux différentes parties de l'application de communiquer entre elles de manière
+      découpée et flexible.
+    </p>
+    <p>
+      Par exemple, lorsqu'une action spécifique se produit (comme la création d'un utilisateur ou la soumission d'un
+      formulaire), un événement est déclenché. Les écouteurs d'événements (observers) peuvent alors réagir à cet événement en
+      exécutant du code spécifique.
+    </p>
+    <footer>
+      <a href="https://symfony.com/doc/current/components/event_dispatcher.html" target="_blank" class="info">
+        Symfony Event Dispatcher Documentation
+      </a>
+    </footer>
+  </section>
+
+  <section>
+    <h3>Exercice</h3>
+    <p>
+      Implémentez un système de notifications où plusieurs observateurs (par exemple, des utilisateurs) sont notifiés
+      lorsqu'un événement spécifique se produit (par exemple, le changement de prix d'un produit).
+    </p>
+    <div class="instructions">
+      <ol>
+        <li>Créer le diagramme de classe UML</li>
+        <li>Écrire le code source correspondant</li>
+      </ol>
+    </div>
+  </section>
+
+</section>
